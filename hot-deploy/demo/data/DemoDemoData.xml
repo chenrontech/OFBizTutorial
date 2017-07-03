@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <entity-engine-xml>
-
+    <Demo demoId="SAMPLE_DEMO_1" demoTypeId="INTERNAL" firstName="Sample First 1" lastName="Sample Last 1" comments="This is test comment for first record."/>
+    <Demo demoId="SAMPLE_DEMO_2" demoTypeId="INTERNAL" firstName="Sample First 2" lastName="Sample last 2" comments="This is test comment for second record."/>
+    <Demo demoId="SAMPLE_DEMO_3" demoTypeId="EXTERNAL" firstName="Sample First 3" lastName="Sample last 3" comments="This is test comment for third record."/>
+    <Demo demoId="SAMPLE_DEMO_4" demoTypeId="EXTERNAL" firstName="Sample First 4" lastName="Sample last 4" comments="This is test comment for fourth record."/>
 </entity-engine-xml>

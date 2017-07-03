@@ -7,6 +7,24 @@
     <title>Entity of Demo Component</title>
     <description>None</description>
     <copyright></copyright>
-    <version></version>
+    <version>1.0</version>
+
+    <entity entity-name="DemoType" package-name="org.ofbiz.demo" title="Demo Type Entity">
+        <field name="demoTypeId" type="id-ne"><description>primary sequenced ID</description></field>
+        <field name="description" type="description"></field>
+        <prim-key field="demoTypeId"/>
+    </entity>
+
+    <entity entity-name="Demo" package-name="org.ofbiz.demo" title="Demo Entity">
+        <field name="demoId" type="id-ne"><description>primary sequenced ID</description></field>
+        <field name="demoTypeId" type="id-ne"></field>
+        <field name="firstName" type="name"></field>
+        <field name="lastName" type="name"></field>
+        <field name="comments" type="comment"></field>
+        <prim-key field="demoId"/>
+        <relation type="one" fk-name="ODEM_OD_TYPE_ID" rel-entity-name="DemoType">
+            <key-map field-name="demoTypeId"/>
+        </relation>
+    </entity>
 
 </entitymodel>
