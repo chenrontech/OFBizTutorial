@@ -10,7 +10,9 @@
             <widgets>
                 <decorator-screen name="DemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <label text="Hello World!! :)" />
+                        <screenlet title="Add Ofbiz Demo">
+                            <include-form name="AddDemo" location="component://demo/widget/DemoForms.xml"/>
+                        </screenlet>
                     </decorator-section>
                 </decorator-screen>
             </widgets>
