@@ -20,4 +20,29 @@
         <value xml:lang="zh">不允许你浏览这个页面。</value>
         <value xml:lang="zh-TW">不允許您檢視這個頁面.</value>
     </property>
+
+    <property key="DemoFind">
+        <value xml:lang="en">Find</value>
+        <value xml:lang="zh">查找</value>
+    </property>
+    <property key="DemoFirstName">
+        <value xml:lang="en">First Name</value>
+        <value xml:lang="zh">名</value>
+    </property>
+    <property key="DemoId">
+        <value xml:lang="en">Demo Id</value>
+        <value xml:lang="zh">Id</value>
+    </property>
+    <property key="DemoLastName">
+        <value xml:lang="en">Last Name</value>
+        <value xml:lang="zh">姓</value>
+    </property>
+    <property key="DemoType">
+        <value xml:lang="en">Demo Type</value>
+        <value xml:lang="zh">类型</value>
+    </property>
+    <property key="DemoComment">
+        <value xml:lang="en">Demo Comment</value>
+        <value xml:lang="zh">评论</value>
+    </property>
 </resource>
