@@ -7,6 +7,8 @@
              Service attributes will automatically lookedup and will be shown on form
         -->
         <auto-fields-service service-name="createDemo"/>
+        <field name="firstName" title="${uiLabelMap.DemoFirstName}"></field>
+        <field name="lastName" title="${uiLabelMap.DemoLastName}"></field>
         <field name="demoTypeId" title="${uiLabelMap.CommonType}">
             <drop-down allow-empty="false" current-description="">
                 <!---We have made this drop down options dynamic(Values from db) using this -->
@@ -16,5 +18,39 @@
             </drop-down>
         </field>
         <field name="submitButton" title="${uiLabelMap.CommonAdd}"><submit button-type="button"/></field>
+    </form>
+
+    <form name="FindDemo" type="single" target="FindDemo" default-entity-name="Demo">
+        <field name="noConditionFind"><hidden value="Y"/> <!-- if this isn't there then with all fields empty no query will be done --></field>
+        <field name="demoId" title="${uiLabelMap.DemoId}"><text-find/></field>
+        <field name="firstName" title="${uiLabelMap.DemoFirstName}"><text-find/></field>
+        <field name="lastName" title="${uiLabelMap.DemoLastName}"><text-find/></field>
+        <field name="demoTypeId" title="${uiLabelMap.DemoType}">
+            <drop-down allow-empty="true" current-description="">
+                <entity-options description="${description}" key-field-name="demoTypeId" entity-name="DemoType">
+                    <entity-order-by field-name="description"/>
+                </entity-options>
+            </drop-down>
+        </field>
+        <field name="searchButton" title="${uiLabelMap.CommonFind}" widget-style="smallSubmit"><submit button-type="button" image-location="/images/icons/magnifier.png"/></field>
+    </form>
+
+    <form name="ListDemo" type="list" list-name="listIt" paginate-target="FindDemo" default-entity-name="Demo" separate-columns="true"
+        odd-row-style="alternate-row" header-row-style="header-row-2" default-table-style="basic-table hover-bar">
+        <actions>
+            <!-- Preparing search results for user query by using OFBiz stock service to perform find operations on a single entity or view entity -->
+            <service service-name="performFind" result-map="result" result-map-list="listIt">
+                <field-map field-name="inputFields" from-field="demoCtx"/>
+                <field-map field-name="entityName" value="Demo"/>
+                <field-map field-name="orderBy" from-field="parameters.sortField"/>
+                <field-map field-name="viewIndex" from-field="viewIndex"/>
+                <field-map field-name="viewSize" from-field="viewSize"/>
+            </service>
+        </actions>
+        <field name="demoId" title="${uiLabelMap.DemoId}"><display/></field>
+        <field name="demoTypeId" title="${uiLabelMap.DemoType}"><display-entity entity-name="DemoType"/></field>
+        <field name="firstName" title="${uiLabelMap.DemoFirstName}" sort-field="true"><display/></field>
+        <field name="lastName" title="${uiLabelMap.DemoLastName}" sort-field="true"><display/></field>
+        <field name="comments" title="${uiLabelMap.DemoComment}"><display/></field>
     </form>
 </forms>

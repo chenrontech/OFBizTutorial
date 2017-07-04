@@ -34,4 +34,11 @@
 
     <!-- View Mappings -->
     <view-map name="main" type="screen" page="component://demo/widget/DemoScreens.xml#main"/>
+
+    <request-map uri="FindDemo">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="FindDemo"/>
+    </request-map>
+
+    <view-map name="FindDemo" type="screen" page="component://demo/widget/DemoScreens.xml#FindDemo"/>
 </site-conf>
