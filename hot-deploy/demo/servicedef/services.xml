@@ -12,9 +12,17 @@
         <override name="comments" optional="true"/>
     </service>-->
 
-    <service name="createDemoByJavaService" default-entity-name="Demo" engine="java"
+    <!--<service name="createDemoByJavaService" default-entity-name="Demo" engine="java"
             location="com.rontech.demo.services.DemoServices" invoke="createDemo" auth="true">
         <description>Create an Ofbiz Demo record using a service in Java</description>
+        <auto-attributes include="pk" mode="OUT" optional="false"/>
+        <auto-attributes include="nonpk" mode="IN" optional="false"/>
+        <override name="comments" optional="true"/>
+    </service>-->
+
+    <service name="createDemoByGroovyService" default-entity-name="Demo" engine="groovy"
+            location="component://demo/script/com/rontech/demo/DemoServices.groovy" invoke="createDemo" auth="true">
+        <description>Create an Ofbiz Demo record using a service in Groovy</description>
         <auto-attributes include="pk" mode="OUT" optional="false"/>
         <auto-attributes include="nonpk" mode="IN" optional="false"/>
         <override name="comments" optional="true"/>

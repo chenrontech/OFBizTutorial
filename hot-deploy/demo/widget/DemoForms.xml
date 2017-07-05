@@ -7,7 +7,8 @@
              Service attributes will automatically lookedup and will be shown on form
         -->
         <!--<auto-fields-service service-name="createDemo"/>-->
-        <auto-fields-service service-name="createDemoByJavaService"/>
+        <!--<auto-fields-service service-name="createDemoByJavaService"/>-->
+        <auto-fields-service service-name="createDemoByGroovyService"/>
         <field name="firstName" title="${uiLabelMap.DemoFirstName}"></field>
         <field name="lastName" title="${uiLabelMap.DemoLastName}"></field>
         <field name="demoTypeId" title="${uiLabelMap.CommonType}">
