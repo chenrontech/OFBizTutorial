@@ -6,7 +6,8 @@
         <!-- We have this utility in OFBiz to render form based on service definition.
              Service attributes will automatically lookedup and will be shown on form
         -->
-        <auto-fields-service service-name="createDemo"/>
+        <!--<auto-fields-service service-name="createDemo"/>-->
+        <auto-fields-service service-name="createDemoByJavaService"/>
         <field name="firstName" title="${uiLabelMap.DemoFirstName}"></field>
         <field name="lastName" title="${uiLabelMap.DemoLastName}"></field>
         <field name="demoTypeId" title="${uiLabelMap.CommonType}">

@@ -28,7 +28,8 @@
 
     <request-map uri="createDemo">
         <security https="true" auth="true"/>
-        <event type="service" invoke="createDemo"/>
+        <!--<event type="service" invoke="createDemo"/>-->
+        <event type="service" invoke="createDemoByJavaService"/>
         <response name="success" type="view" value="main"/>
     </request-map>
 
