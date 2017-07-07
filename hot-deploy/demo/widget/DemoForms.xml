@@ -2,7 +2,8 @@
 <forms xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         xsi:noNamespaceSchemaLocation="http://ofbiz.apache.org/dtds/widget-form.xsd">
 
-    <form name="AddDemo" type="single" target="createDemo">
+    <!--<form name="AddDemo" type="single" target="createDemo">-->
+    <form name="AddDemo" type="single" target="createDemoEvent">
         <!-- We have this utility in OFBiz to render form based on service definition.
              Service attributes will automatically lookedup and will be shown on form
         -->

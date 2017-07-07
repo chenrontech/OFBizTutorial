@@ -26,12 +26,19 @@
         <response name="success" type="view" value="main"/>
     </request-map>
 
-    <request-map uri="createDemo">
-        <security https="true" auth="true"/>
+    <!--<request-map uri="createDemo">-->
+        <!--<security https="true" auth="true"/>-->
         <!--<event type="service" invoke="createDemo"/>-->
         <!--<event type="service" invoke="createDemoByJavaService"/>-->
-        <event type="service" invoke="createDemoByGroovyService"/>
+        <!--<event type="service" invoke="createDemoByGroovyService"/>-->
+        <!--<response name="success" type="view" value="main"/>-->
+    <!--</request-map>-->
+
+    <request-map uri="createDemoEvent">
+        <security https="true" auth="true"/>
+        <event type="java" path="com.rontech.demo.events.DemoEvents" invoke="createDemoEvent"/>
         <response name="success" type="view" value="main"/>
+        <response name="error" type="view" value="main"/>
     </request-map>
 
     <!-- View Mappings -->
