@@ -45,4 +45,12 @@
         <value xml:lang="en">Demo Comment</value>
         <value xml:lang="zh">评论</value>
     </property>
+    <property key="AddDemo">
+        <value xml:lang="en">Add Demo</value>
+        <value xml:lang="zh">新建</value>
+    </property>
+    <property key="ListDemo">
+        <value xml:lang="en">List Demo</value>
+        <value xml:lang="zh">列表</value>
+    </property>
 </resource>

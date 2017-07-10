@@ -50,4 +50,11 @@
     </request-map>
 
     <view-map name="FindDemo" type="screen" page="component://demo/widget/DemoScreens.xml#FindDemo"/>
+
+    <request-map uri="AddDemoFtl">
+        <security https="true" auth="true"/>
+        <response name="success" type="view" value="AddDemoFtl"/>
+    </request-map>
+
+    <view-map name="AddDemoFtl" type="screen" page="component://demo/widget/DemoScreens.xml#AddDemoFtl"/>
 </site-conf>
