@@ -57,23 +57,27 @@
     <screen name="AddDemoFtl">
         <section>
             <actions>
-                <set field="titleProperty" value="PageTitleAddDemos"/>
+                <!--<set field="titleProperty" value="PageTitleAddDemos"/>-->
+                <set field="titleProperty" value="AddDemoFtl"/>
                 <set field="headerItem" value="addDemoFtl"/>
                 <script location="component://demo/webapp/demo/WEB-INF/actions/crud/ListDemo.groovy"/>
             </actions>
             <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
+                <!--<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">-->
+                <decorator-screen name="DemoCommonDecorator" location="${parameters.mainDecoratorLocation}">
                     <decorator-section name="body">
-                        <screenlet title="${uiLabelMap.ListDemo}">
+                        <!--<screenlet title="${uiLabelMap.ListDemo}">-->
+                            <label style="h4" text="${uiLabelMap.ListDemo}"/>
                             <platform-specific>
                                 <html><html-template location="component://demo/webapp/demo/crud/ListDemo.ftl"/></html>
                             </platform-specific>
-                        </screenlet>
-                        <screenlet title="${uiLabelMap.AddDemo}">
+                        <!--</screenlet>-->
+                        <!--<screenlet title="${uiLabelMap.AddDemo}">-->
+                            <label style="h4" text="${uiLabelMap.AddDemo}"/>
                             <platform-specific>
                                 <html><html-template location="component://demo/webapp/demo/crud/AddDemo.ftl"/></html>
                             </platform-specific>
-                        </screenlet>
+                        <!--</screenlet>-->
                     </decorator-section>
                 </decorator-screen>
             </widgets>

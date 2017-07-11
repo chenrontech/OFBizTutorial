@@ -25,23 +25,39 @@
     <screen name="DemoCommonDecorator">
         <section>
             <actions>
+                <property-map resource="DemoUiLabels" map-name="uiLabelMap" global="true"/>
+                <property-map resource="CommonUiLabels" map-name="uiLabelMap" global="true"/>
+
+                <!-- Including custom CSS Styles that you want to use in your application view. [] in field can be used to
+                    set the order of loading CSS files to load if there are multiple -->
+                <!--<set field="styleSheets[]" value="demo/css/bootstrap.min.css"/>-->
+                <set field="styleSheets[]" value="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+
+                <!-- Including custom JS that you want to use in your application view. [] in field can be used to
+                    set the order of loading of JS files to load if there are multiple -->
+                <!--<set field="javaScripts[+0]" value="demo/js/bootstrap.min.js" global="true"/>-->
+                <set field="javaScripts[+0]" value="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" global="true"/>
+                <set field="layoutSettings.companyName" from-field="uiLabelMap.DemoCompanyName" global="true"/>
             </actions>
             <widgets>
-                <decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">
-                    <decorator-section name="body">
+                <!--<decorator-screen name="main-decorator" location="${parameters.mainDecoratorLocation}">-->
+                    <!--<decorator-section name="body">-->
                         <section>
                             <condition>
                                 <if-has-permission permission="DEMO" action="_VIEW"/>
                             </condition>
                             <widgets>
+                                <platform-specific><html><html-template location="component://demo/webapp/demo/includes/PreBody.ftl"/></html></platform-specific>
+                                <decorator-section-include name="pre-body"/>
                                 <decorator-section-include name="body"/>
+                                <platform-specific><html><html-template location="component://demo/webapp/demo/includes/PostBody.ftl"/></html></platform-specific>
                             </widgets>
                             <fail-widgets>
                                 <label style="h3">${uiLabelMap.DemoViewPermissionError}</label>
                             </fail-widgets>
                         </section>
-                    </decorator-section>
-                </decorator-screen>
+                    <!--</decorator-section>-->
+                <!--</decorator-screen>-->
             </widgets>
         </section>
     </screen>

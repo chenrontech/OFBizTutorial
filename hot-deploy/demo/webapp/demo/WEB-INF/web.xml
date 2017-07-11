@@ -76,4 +76,9 @@
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
     </welcome-file-list>
+
+    <init-param>
+        <param-name>allowedPaths</param-name>
+        <param-value>/error:/control:/select:/index.html:/index.jsp:/default.html:/default.jsp:/images:/includes/maincss.css:/css:/js:/</param-value>
+    </init-param>
 </web-app>

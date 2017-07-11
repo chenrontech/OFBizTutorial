@@ -1,6 +1,7 @@
-<div class="screenlet-body">
-  <#if demoList?has_content>
-    <table cellspacing=0 cellpadding=2 border=0 class="basic-table">
+<#-- <div class="screenlet-body"> -->
+  <#-- <#if demoList?has_content> -->
+    <#-- <table cellspacing=0 cellpadding=2 border=0 class="basic-table"> -->
+    <table class="table table-bordered table-striped table-hover">
       <thead><tr>
         <th>${uiLabelMap.DemoId}</th>
         <th>${uiLabelMap.DemoType}</th>
@@ -18,7 +19,7 @@
             <td>${demo.comments!}</td>
           </tr>
         </#list>
-       </tbody>
+      </tbody>
     </table>
-  </#if>
-</div>
+  <#-- </#if> -->
+<#-- </div> -->
